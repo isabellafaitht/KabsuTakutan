@@ -1,0 +1,11 @@
+Model Information:
+* title:	Stairs Hello neighbor
+* source:	https://sketchfab.com/3d-models/stairs-hello-neighbor-68f473ab321047e0841f3b5a870c8185
+* author:	Kriz Faerson (https://sketchfab.com/KrizFaerson)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Stairs Hello neighbor" (https://sketchfab.com/3d-models/stairs-hello-neighbor-68f473ab321047e0841f3b5a870c8185) by Kriz Faerson (https://sketchfab.com/KrizFaerson) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

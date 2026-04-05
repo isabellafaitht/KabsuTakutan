@@ -1,0 +1,8 @@
+Model Information:
+* title:	Desk
+* source:	https://sketchfab.com/3d-models/desk-67e38040c26e4662820767b668c846c6
+* author:	GonnabeOkay (https://sketchfab.com/GonnabeOkay)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works

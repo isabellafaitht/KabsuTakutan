@@ -1,0 +1,11 @@
+Model Information:
+* title:	Horror Game Floor Generator (Free)
+* source:	https://sketchfab.com/3d-models/horror-game-floor-generator-free-1d9310352e9942528f4199b5c8e20a88
+* author:	Berk Gedik (https://sketchfab.com/berkgedik)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Horror Game Floor Generator (Free)" (https://sketchfab.com/3d-models/horror-game-floor-generator-free-1d9310352e9942528f4199b5c8e20a88) by Berk Gedik (https://sketchfab.com/berkgedik) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

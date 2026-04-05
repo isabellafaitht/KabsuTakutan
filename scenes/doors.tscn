@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/low-poly_psx_style_worn_wooden_doors_pack/scene.gltf" type="PackedScene" id=1]
+
+[node name="doors" instance=ExtResource( 1 )]

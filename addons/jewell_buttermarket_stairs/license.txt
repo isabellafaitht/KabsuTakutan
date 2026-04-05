@@ -1,0 +1,11 @@
+Model Information:
+* title:	jewell; buttermarket stairs
+* source:	https://sketchfab.com/3d-models/jewell-buttermarket-stairs-25fb146eb72c486190d512585a8453ab
+* author:	Cornwall Stairs Limited (https://sketchfab.com/cs_adam)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "jewell; buttermarket stairs" (https://sketchfab.com/3d-models/jewell-buttermarket-stairs-25fb146eb72c486190d512585a8453ab) by Cornwall Stairs Limited (https://sketchfab.com/cs_adam) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

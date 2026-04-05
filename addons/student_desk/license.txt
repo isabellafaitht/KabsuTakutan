@@ -1,0 +1,8 @@
+Model Information:
+* title:	Student Desk
+* source:	https://sketchfab.com/3d-models/student-desk-4206f17763e240ac84755127d706ceeb
+* author:	GonnabeOkay (https://sketchfab.com/GonnabeOkay)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works
