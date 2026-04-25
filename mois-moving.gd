@@ -1,6 +1,6 @@
 extends KinematicBody 
 
-var speed = 4.5
+var speed = 2.5
 var player = null
 var velocity = Vector3.ZERO 
 
@@ -36,7 +36,7 @@ func _physics_process(delta):
 
 
 # --- THE KILL ZONE SIGNAL ---
-func _on_KillZone_body_entered(body):
+func _on_Killzone_body_entered(body):
 	if body.name == "Player":
 		print("Nahuli ka!")
-		get_tree().call_deferred("change_scene", "res://scenes/UserInterface.tscn")
+		get_tree().call_deferred("change_scene", "res://scenes/Gameover.tscn")

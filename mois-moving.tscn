@@ -4,6 +4,7 @@
 [ext_resource path="res://mois-moving.gd" type="Script" id=2]
 
 [sub_resource type="BoxShape" id=1]
+extents = Vector3( 1, 1, 0.177252 )
 
 [node name="mois-moving" type="KinematicBody"]
 transform = Transform( 1.00047, 0, 0, 0, 1.00047, 0, 0, 0, 4.72312, 0, 0, 0 )

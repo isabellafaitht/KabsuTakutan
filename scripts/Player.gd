@@ -7,6 +7,9 @@ export var gravity: float = 12.0
 var minLookAngle: float = -90.0
 var maxLookAngle: float = 90.0
 var lookSensitivity: float = 0.5
+var footstep_timer: float = 0.0
+export var footstep_rate: float = 0.5
+onready var interact_raycast = $Camera/RayCast
 
 var velocity: Vector3 = Vector3()
 var mouseDelta: Vector2 = Vector2()
@@ -29,6 +32,7 @@ func _physics_process(delta):
 	velocity.z = 0
 	var input = Vector2()
 	
+	
 	if Input.is_action_pressed("move_forward"):
 		input.y -= 1
 	if Input.is_action_pressed("move_backward"):
@@ -37,6 +41,14 @@ func _physics_process(delta):
 		input.x -= 1
 	if Input.is_action_pressed("move_right"):
 		input.x += 1
+	if Input.is_action_just_pressed("interact"):
+		# Check if the laser is hitting something
+		if interact_raycast.is_colliding():
+			var target = interact_raycast.get_collider()
+			
+			# Check if the thing we hit has an 'interact' function inside its script
+			if target.has_method("interact"):
+				target.interact() # Tell the door to do its thing!
 	
 	input = input.normalized()
 	
@@ -48,6 +60,18 @@ func _physics_process(delta):
 	
 	velocity.y -= gravity*delta
 	velocity = move_and_slide(velocity, Vector3.UP)
+	
+	var horizontal_speed = Vector2(velocity.x, velocity.z).length()
+	
+	if is_on_floor() and horizontal_speed > 0.5:
+		
+		footstep_timer += delta
+		if footstep_timer >= footstep_rate:
+			$AudioStreamPlayer.play()
+			$AudioStreamPlayer.pitch_scale = rand_range(0.8, 1.2)
+			footstep_timer = 0.0
+	else:
+		footstep_timer = 0.0
 	
 	if Input.is_action_just_pressed("jump"):
 		velocity.y = jumpForce
