@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=2]
+[gd_scene load_steps=101 format=2]
 
 [ext_resource path="res://converted_meshlibrary/modular_house_pack.tres" type="MeshLibrary" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
@@ -15,6 +15,8 @@
 [ext_resource path="res://scenes/BoundaryTrigger.gd" type="Script" id=13]
 [ext_resource path="res://scenes/PauseMenu.gd" type="Script" id=14]
 [ext_resource path="res://scenes/computertable.tscn" type="PackedScene" id=15]
+[ext_resource path="res://scenes/Computer.tscn" type="PackedScene" id=16]
+[ext_resource path="res://scenes/ComputerTrigger.gd" type="Script" id=17]
 
 [sub_resource type="BoxShape" id=4]
 
@@ -769,13 +771,539 @@ tracks/0/keys = {
 "values": [ Vector3( 0, 0, 0 ), Vector3( 4.02774e-07, -2.28145e-06, 20.024 ), Vector3( 1.74091e-06, -4.49088e-06, 42.378 ) ]
 }
 
+[sub_resource type="Animation" id=55]
+length = 0.001
+
+[sub_resource type="Animation" id=56]
+resource_name = "screenlight"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sketchfab_model/Fullsetupfbx/RootNode/Monitor_Cube/Monitor_Cube_Screen_0:mesh:surface_1/material:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sketchfab_model/Fullsetupfbx/RootNode/Monitor_Cube/Monitor_Cube_Screen_0:mesh:surface_1/material:emission_enabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, true, false, false, true, true, false, true, false, true ]
+}
+
+[sub_resource type="Animation" id=57]
+length = 0.001
+
+[sub_resource type="Animation" id=58]
+resource_name = "screenlight"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sketchfab_model/Fullsetupfbx/RootNode/Monitor_Cube/Monitor_Cube_Screen_0:mesh:surface_1/material:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sketchfab_model/Fullsetupfbx/RootNode/Monitor_Cube/Monitor_Cube_Screen_0:mesh:surface_1/material:emission_enabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, true, false, false, true, true, false, true, false, true ]
+}
+
+[sub_resource type="Animation" id=59]
+length = 0.001
+
+[sub_resource type="Animation" id=60]
+resource_name = "screenlight"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sketchfab_model/Fullsetupfbx/RootNode/Monitor_Cube/Monitor_Cube_Screen_0:mesh:surface_1/material:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sketchfab_model/Fullsetupfbx/RootNode/Monitor_Cube/Monitor_Cube_Screen_0:mesh:surface_1/material:emission_enabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, true, false, false, true, true, false, true, false, true ]
+}
+
+[sub_resource type="Animation" id=61]
+length = 0.001
+
+[sub_resource type="Animation" id=62]
+resource_name = "screenlight"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sketchfab_model/Fullsetupfbx/RootNode/Monitor_Cube/Monitor_Cube_Screen_0:mesh:surface_1/material:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sketchfab_model/Fullsetupfbx/RootNode/Monitor_Cube/Monitor_Cube_Screen_0:mesh:surface_1/material:emission_enabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, true, false, false, true, true, false, true, false, true ]
+}
+
+[sub_resource type="Animation" id=63]
+length = 0.001
+
+[sub_resource type="Animation" id=64]
+resource_name = "screenlight"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sketchfab_model/Fullsetupfbx/RootNode/Monitor_Cube/Monitor_Cube_Screen_0:mesh:surface_1/material:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sketchfab_model/Fullsetupfbx/RootNode/Monitor_Cube/Monitor_Cube_Screen_0:mesh:surface_1/material:emission_enabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, true, false, false, true, true, false, true, false, true ]
+}
+
+[sub_resource type="Animation" id=65]
+length = 0.001
+
+[sub_resource type="Animation" id=66]
+resource_name = "screenlight"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sketchfab_model/Fullsetupfbx/RootNode/Monitor_Cube/Monitor_Cube_Screen_0:mesh:surface_1/material:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sketchfab_model/Fullsetupfbx/RootNode/Monitor_Cube/Monitor_Cube_Screen_0:mesh:surface_1/material:emission_enabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, true, false, false, true, true, false, true, false, true ]
+}
+
+[sub_resource type="Animation" id=67]
+length = 0.001
+
+[sub_resource type="Animation" id=68]
+resource_name = "screenlight"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sketchfab_model/Fullsetupfbx/RootNode/Monitor_Cube/Monitor_Cube_Screen_0:mesh:surface_1/material:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sketchfab_model/Fullsetupfbx/RootNode/Monitor_Cube/Monitor_Cube_Screen_0:mesh:surface_1/material:emission_enabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, true, false, false, true, true, false, true, false, true ]
+}
+
+[sub_resource type="Animation" id=69]
+length = 0.001
+
+[sub_resource type="Animation" id=70]
+resource_name = "screenlight"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sketchfab_model/Fullsetupfbx/RootNode/Monitor_Cube/Monitor_Cube_Screen_0:mesh:surface_1/material:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sketchfab_model/Fullsetupfbx/RootNode/Monitor_Cube/Monitor_Cube_Screen_0:mesh:surface_1/material:emission_enabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, true, false, false, true, true, false, true, false, true ]
+}
+
+[sub_resource type="Animation" id=71]
+length = 0.001
+
+[sub_resource type="Animation" id=72]
+resource_name = "screenlight"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sketchfab_model/Fullsetupfbx/RootNode/Monitor_Cube/Monitor_Cube_Screen_0:mesh:surface_1/material:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sketchfab_model/Fullsetupfbx/RootNode/Monitor_Cube/Monitor_Cube_Screen_0:mesh:surface_1/material:emission_enabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, true, false, false, true, true, false, true, false, true ]
+}
+
+[sub_resource type="Animation" id=73]
+length = 0.001
+
+[sub_resource type="Animation" id=74]
+resource_name = "screenlight"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sketchfab_model/Fullsetupfbx/RootNode/Monitor_Cube/Monitor_Cube_Screen_0:mesh:surface_1/material:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sketchfab_model/Fullsetupfbx/RootNode/Monitor_Cube/Monitor_Cube_Screen_0:mesh:surface_1/material:emission_enabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, true, false, false, true, true, false, true, false, true ]
+}
+
+[sub_resource type="Animation" id=75]
+length = 0.001
+
+[sub_resource type="Animation" id=76]
+resource_name = "screenlight"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sketchfab_model/Fullsetupfbx/RootNode/Monitor_Cube/Monitor_Cube_Screen_0:mesh:surface_1/material:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sketchfab_model/Fullsetupfbx/RootNode/Monitor_Cube/Monitor_Cube_Screen_0:mesh:surface_1/material:emission_enabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, true, false, false, true, true, false, true, false, true ]
+}
+
+[sub_resource type="Animation" id=77]
+length = 0.001
+
+[sub_resource type="Animation" id=78]
+resource_name = "screenlight"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sketchfab_model/Fullsetupfbx/RootNode/Monitor_Cube/Monitor_Cube_Screen_0:mesh:surface_1/material:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sketchfab_model/Fullsetupfbx/RootNode/Monitor_Cube/Monitor_Cube_Screen_0:mesh:surface_1/material:emission_enabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, true, false, false, true, true, false, true, false, true ]
+}
+
+[sub_resource type="Animation" id=79]
+length = 0.001
+
+[sub_resource type="Animation" id=80]
+resource_name = "screenlight"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sketchfab_model/Fullsetupfbx/RootNode/Monitor_Cube/Monitor_Cube_Screen_0:mesh:surface_1/material:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sketchfab_model/Fullsetupfbx/RootNode/Monitor_Cube/Monitor_Cube_Screen_0:mesh:surface_1/material:emission_enabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, true, false, false, true, true, false, true, false, true ]
+}
+
+[sub_resource type="Animation" id=81]
+length = 0.001
+
+[sub_resource type="Animation" id=82]
+resource_name = "screenlight"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sketchfab_model/Fullsetupfbx/RootNode/Monitor_Cube/Monitor_Cube_Screen_0:mesh:surface_1/material:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sketchfab_model/Fullsetupfbx/RootNode/Monitor_Cube/Monitor_Cube_Screen_0:mesh:surface_1/material:emission_enabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, true, false, false, true, true, false, true, false, true ]
+}
+
+[sub_resource type="Animation" id=83]
+length = 0.001
+
+[sub_resource type="Animation" id=84]
+resource_name = "screenlight"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sketchfab_model/Fullsetupfbx/RootNode/Monitor_Cube/Monitor_Cube_Screen_0:mesh:surface_1/material:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sketchfab_model/Fullsetupfbx/RootNode/Monitor_Cube/Monitor_Cube_Screen_0:mesh:surface_1/material:emission_enabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, true, false, false, true, true, false, true, false, true ]
+}
+
+[sub_resource type="Animation" id=85]
+length = 0.001
+
+[sub_resource type="Animation" id=86]
+resource_name = "screenlight"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sketchfab_model/Fullsetupfbx/RootNode/Monitor_Cube/Monitor_Cube_Screen_0:mesh:surface_1/material:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sketchfab_model/Fullsetupfbx/RootNode/Monitor_Cube/Monitor_Cube_Screen_0:mesh:surface_1/material:emission_enabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, true, false, false, true, true, false, true, false, true ]
+}
+
+[sub_resource type="BoxShape" id=52]
+extents = Vector3( 1.54653, 1, 1.70697 )
+
+[sub_resource type="Animation" id=53]
+length = 0.001
+
+[sub_resource type="Animation" id=54]
+resource_name = "screenlight"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sketchfab_model/Fullsetupfbx/RootNode/Monitor_Cube/Monitor_Cube_Screen_0:mesh:surface_1/material:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sketchfab_model/Fullsetupfbx/RootNode/Monitor_Cube/Monitor_Cube_Screen_0:mesh:surface_1/material:emission_enabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, true, false, false, true, true, false, true, false, true ]
+}
+
 [sub_resource type="DynamicFont" id=46]
 size = 80
 font_data = ExtResource( 12 )
-
-[sub_resource type="Environment" id=52]
-background_mode = 1
-background_color = Color( 0.188235, 0.180392, 0.180392, 1 )
 
 [sub_resource type="BoxShape" id=3]
 extents = Vector3( 2.4214, 0.791623, 2.80066 )
@@ -1185,6 +1713,21 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.2923, 0.143249, -3.83981 )
 [node name="StudentDesk24" parent="building/flooors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.3517, 0.143249, -3.67257 )
 
+[node name="StudentDesk91" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( -0.524759, 0, -0.851251, 0, 1, 0, 0.851251, 0, -0.524759, -3.46096, 0.143249, -9.23379 )
+
+[node name="StudentDesk92" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( -0.0252174, 0, -0.999682, 0, 1, 0, 0.999682, 0, -0.0252174, -3.42345, 0.143249, -8.27078 )
+
+[node name="StudentDesk93" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( -0.0546714, 0, -0.998504, 0, 1, 0, 0.998504, 0, -0.0546714, -3.42594, 0.143249, -7.21918 )
+
+[node name="StudentDesk94" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( -0.267659, 0, -0.963514, 0, 1, 0, 0.963514, 0, -0.267659, -3.3743, 0.143249, -6.14422 )
+
+[node name="StudentDesk95" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( -0.257588, 0, -0.966255, 0, 1, 0, 0.966255, 0, -0.257588, -3.40578, 0.143249, -4.68017 )
+
 [node name="StudentDesk37" parent="building/flooors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2987, 0.143249, 29.7811 )
 
@@ -1559,6 +2102,213 @@ transform = Transform( -0.701327, 0, -0.000770959, 0, 0.30057, 0, 0.00166468, 0,
 
 [node name="computertable16" parent="building/flooors" instance=ExtResource( 15 )]
 transform = Transform( -0.701327, 0, -0.000770959, 0, 0.30057, 0, 0.00166468, 0, -0.324804, 20.5056, 1.35117, 31.0161 )
+
+[node name="Computer" parent="building/flooors" instance=ExtResource( 16 )]
+transform = Transform( -9.00583e-05, 0, -0.00999959, 0, 0.01, 0, 0.00999959, 0, -9.00583e-05, -4.83086, 1.39465, 0.0830618 )
+
+[node name="Computer2" parent="building/flooors" instance=ExtResource( 16 )]
+transform = Transform( -9.00583e-05, 0, -0.00999959, 0, 0.01, 0, 0.00999959, 0, -9.00583e-05, -4.83372, 1.39465, 1.81223 )
+
+[node name="Computer3" parent="building/flooors" instance=ExtResource( 16 )]
+transform = Transform( -9.00583e-05, 0, -0.00999959, 0, 0.01, 0, 0.00999959, 0, -9.00583e-05, -4.84942, 1.39465, 3.55478 )
+
+[node name="Computer4" parent="building/flooors" instance=ExtResource( 16 )]
+transform = Transform( -0.000130023, 0, 0.00999915, 0, 0.01, 0, -0.00999915, 0, -0.000130023, 14.9517, 1.39465, 14.1833 )
+
+[node name="Computer17" parent="building/flooors" instance=ExtResource( 16 )]
+transform = Transform( -0.000130023, 0, 0.00999915, 0, 0.01, 0, -0.00999915, 0, -0.000130023, 14.985, 1.39465, 9.07126 )
+
+[node name="Computer18" parent="building/flooors" instance=ExtResource( 16 )]
+transform = Transform( -0.000130023, 0, 0.00999915, 0, 0.01, 0, -0.00999915, 0, -0.000130023, 14.9822, 1.39465, 10.8004 )
+
+[node name="Computer19" parent="building/flooors" instance=ExtResource( 16 )]
+transform = Transform( -0.000130023, 0, 0.00999915, 0, 0.01, 0, -0.00999915, 0, -0.000130023, 14.9665, 1.39465, 12.543 )
+
+[node name="Computer21" parent="building/flooors" instance=ExtResource( 16 )]
+transform = Transform( -0.000130023, 0, 0.00999915, 0, 0.01, 0, -0.00999915, 0, -0.000130023, 18.5853, 1.39465, 14.1833 )
+
+[node name="Computer22" parent="building/flooors" instance=ExtResource( 16 )]
+transform = Transform( -0.000130023, 0, 0.00999915, 0, 0.01, 0, -0.00999915, 0, -0.000130023, 18.6186, 1.39465, 9.07126 )
+
+[node name="Computer23" parent="building/flooors" instance=ExtResource( 16 )]
+transform = Transform( -0.000130023, 0, 0.00999915, 0, 0.01, 0, -0.00999915, 0, -0.000130023, 18.6158, 1.39465, 10.8004 )
+
+[node name="Computer24" parent="building/flooors" instance=ExtResource( 16 )]
+transform = Transform( -0.000130023, 0, 0.00999915, 0, 0.01, 0, -0.00999915, 0, -0.000130023, 18.6001, 1.39465, 12.543 )
+
+[node name="Computer25" parent="building/flooors" instance=ExtResource( 16 )]
+transform = Transform( -0.000130023, 0, 0.00999915, 0, 0.01, 0, -0.00999915, 0, -0.000130023, 18.5853, 1.39465, 19.8605 )
+
+[node name="Computer26" parent="building/flooors" instance=ExtResource( 16 )]
+transform = Transform( -0.000130023, 0, 0.00999915, 0, 0.01, 0, -0.00999915, 0, -0.000130023, 18.6001, 1.39465, 18.2202 )
+
+[node name="Computer27" parent="building/flooors" instance=ExtResource( 16 )]
+transform = Transform( -0.000130023, 0, 0.00999915, 0, 0.01, 0, -0.00999915, 0, -0.000130023, 15.2191, 1.39465, 19.8605 )
+
+[node name="Computer28" parent="building/flooors" instance=ExtResource( 16 )]
+transform = Transform( -0.000130023, 0, 0.00999915, 0, 0.01, 0, -0.00999915, 0, -0.000130023, 15.2338, 1.39465, 18.2202 )
+
+[node name="Computer20" parent="building/flooors" instance=ExtResource( 16 )]
+transform = Transform( -9.00583e-05, 0, -0.00999959, 0, 0.01, 0, 0.00999959, 0, -9.00583e-05, -4.86419, 1.39465, 5.19515 )
+
+[node name="Computer5" parent="building/flooors" instance=ExtResource( 16 )]
+transform = Transform( -9.00583e-05, 0, -0.00999959, 0, 0.01, 0, 0.00999959, 0, -9.00583e-05, -4.93683, 1.39465, -3.95926 )
+
+[node name="Computer6" parent="building/flooors" instance=ExtResource( 16 )]
+transform = Transform( -9.00583e-05, 0, -0.00999959, 0, 0.01, 0, 0.00999959, 0, -9.00583e-05, -4.92094, 1.39465, -5.72392 )
+
+[node name="Computer7" parent="building/flooors" instance=ExtResource( 16 )]
+transform = Transform( -9.00583e-05, 0, -0.00999959, 0, 0.01, 0, 0.00999959, 0, -9.00583e-05, -4.90585, 1.39465, -7.39945 )
+
+[node name="Computer8" parent="building/flooors" instance=ExtResource( 16 )]
+transform = Transform( -9.00583e-05, 0, -0.00999959, 0, 0.01, 0, 0.00999959, 0, -9.00583e-05, -4.88953, 1.39465, -9.21144 )
+
+[node name="Computer9" parent="building/flooors" instance=ExtResource( 16 )]
+transform = Transform( -9.00583e-05, 0, -0.00999959, 0, 0.01, 0, 0.00999959, 0, -9.00583e-05, -8.48319, 1.39465, -3.95926 )
+
+[node name="Computer10" parent="building/flooors" instance=ExtResource( 16 )]
+transform = Transform( -9.00583e-05, 0, -0.00999959, 0, 0.01, 0, 0.00999959, 0, -9.00583e-05, -8.46729, 1.39465, -5.72392 )
+
+[node name="Computer11" parent="building/flooors" instance=ExtResource( 16 )]
+transform = Transform( -9.00583e-05, 0, -0.00999959, 0, 0.01, 0, 0.00999959, 0, -9.00583e-05, -8.45221, 1.39465, -7.39945 )
+
+[node name="Computer12" parent="building/flooors" instance=ExtResource( 16 )]
+transform = Transform( -9.00583e-05, 0, -0.00999959, 0, 0.01, 0, 0.00999959, 0, -9.00583e-05, -8.43589, 1.39465, -9.21144 )
+
+[node name="Computer13" parent="building/flooors" instance=ExtResource( 16 )]
+transform = Transform( -9.00583e-05, 0, -0.00999959, 0, 0.01, 0, 0.00999959, 0, -9.00583e-05, -8.48319, 1.39465, 5.2569 )
+
+[node name="Computer14" parent="building/flooors" instance=ExtResource( 16 )]
+transform = Transform( -9.00583e-05, 0, -0.00999959, 0, 0.01, 0, 0.00999959, 0, -9.00583e-05, -8.46729, 1.39465, 3.49225 )
+
+[node name="Computer15" parent="building/flooors" instance=ExtResource( 16 )]
+transform = Transform( -9.00583e-05, 0, -0.00999959, 0, 0.01, 0, 0.00999959, 0, -9.00583e-05, -8.45221, 1.39465, 1.81672 )
+
+[node name="Computer16" parent="building/flooors" instance=ExtResource( 16 )]
+transform = Transform( -9.00583e-05, 0, -0.00999959, 0, 0.01, 0, 0.00999959, 0, -9.00583e-05, -8.43589, 1.39465, 0.00471783 )
+
+[node name="ComputerTrigger" type="Area" parent="building/flooors"]
+script = ExtResource( 17 )
+
+[node name="Computer29" parent="building/flooors/ComputerTrigger" instance=ExtResource( 16 )]
+transform = Transform( -3.71746e-05, 0, 0.00999993, 0, 0.01, 0, -0.00999993, 0, -3.71746e-05, 16.3011, 1.39465, 30.9767 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="building/flooors/ComputerTrigger/Computer29"]
+anims/RESET = SubResource( 55 )
+anims/screenlight = SubResource( 56 )
+
+[node name="Computer30" parent="building/flooors/ComputerTrigger" instance=ExtResource( 16 )]
+transform = Transform( -3.71746e-05, 0, 0.00999993, 0, 0.01, 0, -0.00999993, 0, -3.71746e-05, 16.2789, 1.39465, 29.265 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="building/flooors/ComputerTrigger/Computer30"]
+anims/RESET = SubResource( 57 )
+anims/screenlight = SubResource( 58 )
+
+[node name="Computer31" parent="building/flooors/ComputerTrigger" instance=ExtResource( 16 )]
+transform = Transform( -3.71746e-05, 0, 0.00999993, 0, 0.01, 0, -0.00999993, 0, -3.71746e-05, 16.2566, 1.39465, 27.5541 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="building/flooors/ComputerTrigger/Computer31"]
+anims/RESET = SubResource( 59 )
+anims/screenlight = SubResource( 60 )
+
+[node name="Computer32" parent="building/flooors/ComputerTrigger" instance=ExtResource( 16 )]
+transform = Transform( -3.71746e-05, 0, 0.00999993, 0, 0.01, 0, -0.00999993, 0, -3.71746e-05, 16.2344, 1.39465, 25.8447 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="building/flooors/ComputerTrigger/Computer32"]
+anims/RESET = SubResource( 61 )
+anims/screenlight = SubResource( 62 )
+
+[node name="Computer33" parent="building/flooors/ComputerTrigger" instance=ExtResource( 16 )]
+transform = Transform( -0.000130023, 0, 0.00999915, 0, 0.01, 0, -0.00999915, 0, -0.000130023, 10.9395, 1.39465, 30.9767 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="building/flooors/ComputerTrigger/Computer33"]
+anims/RESET = SubResource( 63 )
+anims/screenlight = SubResource( 64 )
+
+[node name="Computer34" parent="building/flooors/ComputerTrigger" instance=ExtResource( 16 )]
+transform = Transform( -0.000130023, 0, 0.00999915, 0, 0.01, 0, -0.00999915, 0, -0.000130023, 10.9172, 1.39465, 29.265 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="building/flooors/ComputerTrigger/Computer34"]
+anims/RESET = SubResource( 65 )
+anims/screenlight = SubResource( 66 )
+
+[node name="Computer35" parent="building/flooors/ComputerTrigger" instance=ExtResource( 16 )]
+transform = Transform( -0.000130023, 0, 0.00999915, 0, 0.01, 0, -0.00999915, 0, -0.000130023, 10.895, 1.39465, 27.5541 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="building/flooors/ComputerTrigger/Computer35"]
+anims/RESET = SubResource( 67 )
+anims/screenlight = SubResource( 68 )
+
+[node name="Computer36" parent="building/flooors/ComputerTrigger" instance=ExtResource( 16 )]
+transform = Transform( -0.000130023, 0, 0.00999915, 0, 0.01, 0, -0.00999915, 0, -0.000130023, 10.8728, 1.39465, 25.8447 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="building/flooors/ComputerTrigger/Computer36"]
+anims/RESET = SubResource( 69 )
+anims/screenlight = SubResource( 70 )
+
+[node name="Computer37" parent="building/flooors/ComputerTrigger" instance=ExtResource( 16 )]
+transform = Transform( -8.23791e-05, 0, -0.00999966, 0, 0.01, 0, 0.00999966, 0, -8.23791e-05, 14.6812, 1.39465, 30.9767 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="building/flooors/ComputerTrigger/Computer37"]
+anims/RESET = SubResource( 71 )
+anims/screenlight = SubResource( 72 )
+
+[node name="Computer38" parent="building/flooors/ComputerTrigger" instance=ExtResource( 16 )]
+transform = Transform( -8.23791e-05, 0, -0.00999966, 0, 0.01, 0, 0.00999966, 0, -8.23791e-05, 14.6589, 1.39465, 29.265 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="building/flooors/ComputerTrigger/Computer38"]
+anims/RESET = SubResource( 73 )
+anims/screenlight = SubResource( 74 )
+
+[node name="Computer39" parent="building/flooors/ComputerTrigger" instance=ExtResource( 16 )]
+transform = Transform( -8.23791e-05, 0, -0.00999966, 0, 0.01, 0, 0.00999966, 0, -8.23791e-05, 14.6367, 1.39465, 27.5541 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="building/flooors/ComputerTrigger/Computer39"]
+anims/RESET = SubResource( 75 )
+anims/screenlight = SubResource( 76 )
+
+[node name="Computer40" parent="building/flooors/ComputerTrigger" instance=ExtResource( 16 )]
+transform = Transform( -8.23791e-05, 0, -0.00999966, 0, 0.01, 0, 0.00999966, 0, -8.23791e-05, 14.6144, 1.39465, 25.8447 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="building/flooors/ComputerTrigger/Computer40"]
+anims/RESET = SubResource( 77 )
+anims/screenlight = SubResource( 78 )
+
+[node name="Computer41" parent="building/flooors/ComputerTrigger" instance=ExtResource( 16 )]
+transform = Transform( 1.04721e-05, 0, -0.00999999, 0, 0.01, 0, 0.00999999, 0, 1.04721e-05, 20.4906, 1.39465, 30.9767 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="building/flooors/ComputerTrigger/Computer41"]
+anims/RESET = SubResource( 79 )
+anims/screenlight = SubResource( 80 )
+
+[node name="Computer42" parent="building/flooors/ComputerTrigger" instance=ExtResource( 16 )]
+transform = Transform( 1.04721e-05, 0, -0.00999999, 0, 0.01, 0, 0.00999999, 0, 1.04721e-05, 20.4683, 1.39465, 29.265 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="building/flooors/ComputerTrigger/Computer42"]
+anims/RESET = SubResource( 81 )
+anims/screenlight = SubResource( 82 )
+
+[node name="Computer43" parent="building/flooors/ComputerTrigger" instance=ExtResource( 16 )]
+transform = Transform( -8.23791e-05, 0, -0.00999966, 0, 0.01, 0, 0.00999966, 0, -8.23791e-05, 20.4461, 1.39465, 27.5541 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="building/flooors/ComputerTrigger/Computer43"]
+anims/RESET = SubResource( 83 )
+anims/screenlight = SubResource( 84 )
+
+[node name="Computer44" parent="building/flooors/ComputerTrigger" instance=ExtResource( 16 )]
+transform = Transform( -8.23791e-05, 0, -0.00999966, 0, 0.01, 0, 0.00999966, 0, -8.23791e-05, 20.4238, 1.39465, 25.8447 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="building/flooors/ComputerTrigger/Computer44"]
+anims/RESET = SubResource( 85 )
+anims/screenlight = SubResource( 86 )
+
+[node name="CollisionShape" type="CollisionShape" parent="building/flooors/ComputerTrigger"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.0684, 2.248, 33.6424 )
+shape = SubResource( 52 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="building/flooors/ComputerTrigger"]
+anims/RESET = SubResource( 53 )
+anims/screenlight = SubResource( 54 )
 
 [node name="building2" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.66436, 0 )
@@ -2110,7 +2860,7 @@ __meta__ = {
 }
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-transform = Transform( -0.823655, -0.000296808, -0.042285, -0.000304272, 0.800494, -4.04817e-05, 0.0397046, -2.26346e-05, -0.877184, 4.17058, 0.181521, -16.843 )
+transform = Transform( -0.823655, -0.000296808, -0.042285, -0.000304272, 0.800494, -4.04817e-05, 0.0397046, -2.26346e-05, -0.877184, 4.12541, 0.181478, -17.7801 )
 
 [node name="BoundaryUI" type="CanvasLayer" parent="Player"]
 
@@ -2125,7 +2875,6 @@ custom_fonts/font = SubResource( 46 )
 text = "Turn back now!"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 52 )
 
 [node name="spawntrap" type="Area" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 0.50833, 0.864706, 0.051238, -4.64494 )
@@ -2257,6 +3006,7 @@ shape = SubResource( 47 )
 [connection signal="body_exited" from="building/flooors/StudentDesk89/TriggerArea3" to="building/flooors/StudentDesk89/TriggerArea3" method="_on_TriggerArea3_body_exited"]
 [connection signal="body_exited" from="building/flooors/StudentDesk72/TriggerArea3" to="building/flooors/StudentDesk72/TriggerArea3" method="_on_TriggerArea3_body_exited"]
 [connection signal="body_exited" from="building/flooors/table8/TableTrigger" to="building/flooors/table8/TableTrigger" method="_on_TableTrigger_body_exited"]
+[connection signal="body_entered" from="building/flooors/ComputerTrigger" to="building/flooors/ComputerTrigger" method="_on_ComputerTrigger_body_entered"]
 [connection signal="body_entered" from="spawntrap" to="spawntrap" method="_on_spawntrap_body_entered"]
 [connection signal="body_entered" from="spawntrap2" to="spawntrap2" method="_on_spawntrap_body_entered"]
 [connection signal="body_entered" from="spawntrap3" to="spawntrap3" method="_on_spawntrap_body_entered"]

@@ -1,0 +1,22 @@
+extends Area
+
+var has_triggered: bool = false
+onready var anim_player = $AnimationPlayer2
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+func _on_ComputerTrigger_body_entered(body):
+	if has_triggered == false:
+		
+		# 2. Check if the thing that touched the trap is specifically the Player
+			if body.name == "Player":
+				
+				# 3. Lock the trap so it never fires again
+				has_triggered = true
+				
+				for child in get_children():
+					if child.has_node("AnimationPlayer2"):
+						child.get_node("AnimationPlayer2").play("screenlight")
