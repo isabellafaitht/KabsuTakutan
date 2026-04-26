@@ -29,7 +29,7 @@ func _ready():
 	$Scream.play()
 	
 	# 2. CREATE A 2-SECOND TIMER IN THE BACKGROUND
-	var scream_timer = get_tree().create_timer(2.0)
+	var scream_timer = get_tree().create_timer(3.0)
 	
 	# 3. TELL THE TIMER TO "STOP" THE AUDIO WHEN TIME IS UP
 	scream_timer.connect("timeout", $Scream, "stop")

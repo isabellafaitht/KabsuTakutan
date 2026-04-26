@@ -24,6 +24,10 @@ config/name="KabsuTakutan"
 run/main_scene="res://scenes/UserInterface.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Bgm="*res://Bgm.tscn"
+
 [display]
 
 window/stretch/mode="viewport"

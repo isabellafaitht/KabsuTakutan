@@ -7,8 +7,6 @@ export var gravity: float = 12.0
 var minLookAngle: float = -90.0
 var maxLookAngle: float = 90.0
 var lookSensitivity: float = 0.5
-var footstep_timer: float = 0.0
-export var footstep_rate: float = 0.5
 onready var interact_raycast = $Camera/RayCast
 
 var velocity: Vector3 = Vector3()
@@ -35,12 +33,25 @@ func _physics_process(delta):
 	
 	if Input.is_action_pressed("move_forward"):
 		input.y -= 1
+		$AudioStreamPlayer.play()
+	if Input.is_action_just_released("move_forward"):
+		$AudioStreamPlayer.stop()
 	if Input.is_action_pressed("move_backward"):
 		input.y += 1
+		$AudioStreamPlayer.play()
+	if Input.is_action_just_released("move_backward"):
+		$AudioStreamPlayer.stop()
 	if Input.is_action_pressed("move_left"):
 		input.x -= 1
+		$AudioStreamPlayer.play()
+	if Input.is_action_just_released("move_left"):
+		$AudioStreamPlayer.stop()
 	if Input.is_action_pressed("move_right"):
 		input.x += 1
+		$AudioStreamPlayer.play()
+	if Input.is_action_just_released("move_right"):
+		$AudioStreamPlayer.stop()
+
 	if Input.is_action_just_pressed("interact"):
 		# Check if the laser is hitting something
 		if interact_raycast.is_colliding():
@@ -60,18 +71,6 @@ func _physics_process(delta):
 	
 	velocity.y -= gravity*delta
 	velocity = move_and_slide(velocity, Vector3.UP)
-	
-	var horizontal_speed = Vector2(velocity.x, velocity.z).length()
-	
-	if is_on_floor() and horizontal_speed > 0.5:
-		
-		footstep_timer += delta
-		if footstep_timer >= footstep_rate:
-			$AudioStreamPlayer.play()
-			$AudioStreamPlayer.pitch_scale = rand_range(0.8, 1.2)
-			footstep_timer = 0.0
-	else:
-		footstep_timer = 0.0
 	
 	if Input.is_action_just_pressed("jump"):
 		velocity.y = jumpForce

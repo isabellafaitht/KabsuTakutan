@@ -1,17 +1,802 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=65 format=2]
 
 [ext_resource path="res://converted_meshlibrary/modular_house_pack.tres" type="MeshLibrary" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://converted_meshlibrary/stair5.tres" type="MeshLibrary" id=3]
 [ext_resource path="res://scenes/InteractableDoor.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/table.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/StudentDesk.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/spawntrap.gd" type="Script" id=7]
+[ext_resource path="res://scenes/TriggerArea.gd" type="Script" id=8]
+[ext_resource path="res://scenes/TriggerArea2.gd" type="Script" id=9]
+[ext_resource path="res://scenes/TableTrigger.gd" type="Script" id=10]
+[ext_resource path="res://scenes/TriggerArea3.gd" type="Script" id=11]
+[ext_resource path="res://FONTS/ghoulster/Ghoulster Demo.ttf" type="DynamicFontData" id=12]
+[ext_resource path="res://scenes/BoundaryTrigger.gd" type="Script" id=13]
+[ext_resource path="res://scenes/PauseMenu.gd" type="Script" id=14]
+[ext_resource path="res://scenes/computertable.tscn" type="PackedScene" id=15]
 
-[sub_resource type="Environment" id=4]
+[sub_resource type="BoxShape" id=4]
+
+[sub_resource type="Animation" id=5]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sketchfab_model/Collada visual scene group/ChairDesk:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -90, 15.231, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sketchfab_model/Collada visual scene group/ChairDesk:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.341831, -1.49419e-08 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "flaot"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sketchfab_model/Collada visual scene group/ChairDesk:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -90, 0, 0 ), Vector3( -70.719, -90, 90 ), Vector3( -82.055, 90, -90 ), Vector3( -82.055, 90, -90 ), Vector3( -90, 90, -90 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sketchfab_model/Collada visual scene group/ChairDesk:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0.341831, -1.49419e-08 ), Vector3( 0, 0.713711, -3.11973e-08 ), Vector3( 0, 0.790748, -3.45647e-08 ), Vector3( 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "moving"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sketchfab_model/Collada visual scene group/ChairDesk:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.5, 0.8, 1, 1.3, 1.5, 1.8, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -90, 0, 0 ), Vector3( -90, 15.231, 0 ), Vector3( -90, 37.407, 0 ), Vector3( -90, -62.077, 0 ), Vector3( -90, 0, 0 ), Vector3( -90, 15.231, 0 ), Vector3( -90, 37.407, 0 ), Vector3( -90, -62.077, 0 ), Vector3( -90, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "tumba"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sketchfab_model/Collada visual scene group/ChairDesk:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.3, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -90, 0, 0 ), Vector3( -72.693, -90, 90 ), Vector3( -67.882, 90, -90 ), Vector3( -77.851, 90, -90 ), Vector3( -1.874, -90, 90 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "tumba2"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sketchfab_model/Collada visual scene group/ChairDesk:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( -90, 0, 0 ), Vector3( 0, -90, 90 ) ]
+}
+
+[sub_resource type="Animation" id=16]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sketchfab_model/Collada visual scene group/ChairDesk:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -90, 15.231, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sketchfab_model/Collada visual scene group/ChairDesk:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.341831, -1.49419e-08 ) ]
+}
+
+[sub_resource type="Animation" id=17]
+resource_name = "flaot"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sketchfab_model/Collada visual scene group/ChairDesk:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -90, 0, 0 ), Vector3( -70.719, -90, 90 ), Vector3( -82.055, 90, -90 ), Vector3( -82.055, 90, -90 ), Vector3( -90, 90, -90 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sketchfab_model/Collada visual scene group/ChairDesk:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0.341831, -1.49419e-08 ), Vector3( 0, 0.713711, -3.11973e-08 ), Vector3( 0, 0.790748, -3.45647e-08 ), Vector3( 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=18]
+resource_name = "moving"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sketchfab_model/Collada visual scene group/ChairDesk:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.5, 0.8, 1, 1.3, 1.5, 1.8, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -90, 0, 0 ), Vector3( -90, 15.231, 0 ), Vector3( -90, 37.407, 0 ), Vector3( -90, -62.077, 0 ), Vector3( -90, 0, 0 ), Vector3( -90, 15.231, 0 ), Vector3( -90, 37.407, 0 ), Vector3( -90, -62.077, 0 ), Vector3( -90, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=19]
+resource_name = "tumba"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sketchfab_model/Collada visual scene group/ChairDesk:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.3, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -90, 0, 0 ), Vector3( -72.693, -90, 90 ), Vector3( -67.882, 90, -90 ), Vector3( -77.851, 90, -90 ), Vector3( -1.874, -90, 90 ) ]
+}
+
+[sub_resource type="Animation" id=20]
+resource_name = "tumba2"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sketchfab_model/Collada visual scene group/ChairDesk:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( -90, 0, 0 ), Vector3( 0, -90, 90 ) ]
+}
+
+[sub_resource type="Animation" id=21]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sketchfab_model/Collada visual scene group/ChairDesk:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -90, 15.231, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sketchfab_model/Collada visual scene group/ChairDesk:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.341831, -1.49419e-08 ) ]
+}
+
+[sub_resource type="Animation" id=22]
+resource_name = "flaot"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sketchfab_model/Collada visual scene group/ChairDesk:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -90, 0, 0 ), Vector3( -70.719, -90, 90 ), Vector3( -82.055, 90, -90 ), Vector3( -82.055, 90, -90 ), Vector3( -90, 90, -90 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sketchfab_model/Collada visual scene group/ChairDesk:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0.341831, -1.49419e-08 ), Vector3( 0, 0.713711, -3.11973e-08 ), Vector3( 0, 0.790748, -3.45647e-08 ), Vector3( 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=23]
+resource_name = "moving"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sketchfab_model/Collada visual scene group/ChairDesk:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.5, 0.8, 1, 1.3, 1.5, 1.8, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -90, 0, 0 ), Vector3( -90, 15.231, 0 ), Vector3( -90, 37.407, 0 ), Vector3( -90, -62.077, 0 ), Vector3( -90, 0, 0 ), Vector3( -90, 15.231, 0 ), Vector3( -90, 37.407, 0 ), Vector3( -90, -62.077, 0 ), Vector3( -90, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=24]
+resource_name = "tumba"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sketchfab_model/Collada visual scene group/ChairDesk:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.3, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -90, 0, 0 ), Vector3( -72.693, -90, 90 ), Vector3( -67.882, 90, -90 ), Vector3( -77.851, 90, -90 ), Vector3( -1.874, -90, 90 ) ]
+}
+
+[sub_resource type="Animation" id=25]
+resource_name = "tumba2"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sketchfab_model/Collada visual scene group/ChairDesk:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( -90, 0, 0 ), Vector3( 0, -90, 90 ) ]
+}
+
+[sub_resource type="BoxShape" id=10]
+extents = Vector3( 1.05651, 0.571824, 1.21847 )
+
+[sub_resource type="Animation" id=11]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sketchfab_model/Collada visual scene group/ChairDesk:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -90, 15.231, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sketchfab_model/Collada visual scene group/ChairDesk:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.341831, -1.49419e-08 ) ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "flaot"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sketchfab_model/Collada visual scene group/ChairDesk:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -90, 0, 0 ), Vector3( -70.719, -90, 90 ), Vector3( -82.055, 90, -90 ), Vector3( -82.055, 90, -90 ), Vector3( -90, 90, -90 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sketchfab_model/Collada visual scene group/ChairDesk:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0.341831, -1.49419e-08 ), Vector3( 0, 0.713711, -3.11973e-08 ), Vector3( 0, 0.790748, -3.45647e-08 ), Vector3( 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "moving"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sketchfab_model/Collada visual scene group/ChairDesk:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.5, 0.8, 1, 1.3, 1.5, 1.8, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -90, 0, 0 ), Vector3( -90, 15.231, 0 ), Vector3( -90, 37.407, 0 ), Vector3( -90, -62.077, 0 ), Vector3( -90, 0, 0 ), Vector3( -90, 15.231, 0 ), Vector3( -90, 37.407, 0 ), Vector3( -90, -62.077, 0 ), Vector3( -90, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "tumba"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sketchfab_model/Collada visual scene group/ChairDesk:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.3, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -90, 0, 0 ), Vector3( -72.693, -90, 90 ), Vector3( -67.882, 90, -90 ), Vector3( -77.851, 90, -90 ), Vector3( -1.874, -90, 90 ) ]
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "tumba2"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sketchfab_model/Collada visual scene group/ChairDesk:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( -90, 0, 0 ), Vector3( 0, -90, 90 ) ]
+}
+
+[sub_resource type="BoxShape" id=26]
+
+[sub_resource type="Animation" id=27]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sketchfab_model/Collada visual scene group/ChairDesk:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -90, 15.231, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sketchfab_model/Collada visual scene group/ChairDesk:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.341831, -1.49419e-08 ) ]
+}
+
+[sub_resource type="Animation" id=28]
+resource_name = "flaot"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sketchfab_model/Collada visual scene group/ChairDesk:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -90, 0, 0 ), Vector3( -70.719, -90, 90 ), Vector3( -82.055, 90, -90 ), Vector3( -82.055, 90, -90 ), Vector3( -90, 90, -90 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sketchfab_model/Collada visual scene group/ChairDesk:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0.341831, -1.49419e-08 ), Vector3( 0, 0.713711, -3.11973e-08 ), Vector3( 0, 0.790748, -3.45647e-08 ), Vector3( 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=29]
+resource_name = "moving"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sketchfab_model/Collada visual scene group/ChairDesk:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.5, 0.8, 1, 1.3, 1.5, 1.8, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -90, 0, 0 ), Vector3( -90, 15.231, 0 ), Vector3( -90, 37.407, 0 ), Vector3( -90, -62.077, 0 ), Vector3( -90, 0, 0 ), Vector3( -90, 15.231, 0 ), Vector3( -90, 37.407, 0 ), Vector3( -90, -62.077, 0 ), Vector3( -90, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=30]
+resource_name = "tumba"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sketchfab_model/Collada visual scene group/ChairDesk:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.3, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -90, 0, 0 ), Vector3( -72.693, -90, 90 ), Vector3( -67.882, 90, -90 ), Vector3( -77.851, 90, -90 ), Vector3( -1.874, -90, 90 ) ]
+}
+
+[sub_resource type="Animation" id=31]
+resource_name = "tumba2"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sketchfab_model/Collada visual scene group/ChairDesk:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( -90, 0, 0 ), Vector3( 0, -90, 90 ) ]
+}
+
+[sub_resource type="Animation" id=32]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sketchfab_model/Collada visual scene group/ChairDesk:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -90, 15.231, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sketchfab_model/Collada visual scene group/ChairDesk:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.341831, -1.49419e-08 ) ]
+}
+
+[sub_resource type="Animation" id=33]
+resource_name = "flaot"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sketchfab_model/Collada visual scene group/ChairDesk:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -90, 0, 0 ), Vector3( -70.719, -90, 90 ), Vector3( -82.055, 90, -90 ), Vector3( -82.055, 90, -90 ), Vector3( -90, 90, -90 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sketchfab_model/Collada visual scene group/ChairDesk:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0.341831, -1.49419e-08 ), Vector3( 0, 0.713711, -3.11973e-08 ), Vector3( 0, 0.790748, -3.45647e-08 ), Vector3( 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=34]
+resource_name = "moving"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sketchfab_model/Collada visual scene group/ChairDesk:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.5, 0.8, 1, 1.3, 1.5, 1.8, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -90, 0, 0 ), Vector3( -90, 15.231, 0 ), Vector3( -90, 37.407, 0 ), Vector3( -90, -62.077, 0 ), Vector3( -90, 0, 0 ), Vector3( -90, 15.231, 0 ), Vector3( -90, 37.407, 0 ), Vector3( -90, -62.077, 0 ), Vector3( -90, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=35]
+resource_name = "tumba"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sketchfab_model/Collada visual scene group/ChairDesk:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.3, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -90, 0, 0 ), Vector3( -72.693, -90, 90 ), Vector3( -67.882, 90, -90 ), Vector3( -77.851, 90, -90 ), Vector3( -1.874, -90, 90 ) ]
+}
+
+[sub_resource type="Animation" id=36]
+resource_name = "tumba2"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sketchfab_model/Collada visual scene group/ChairDesk:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( -90, 0, 0 ), Vector3( 0, -90, 90 ) ]
+}
+
+[sub_resource type="Animation" id=37]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sketchfab_model/Collada visual scene group/ChairDesk:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -90, 15.231, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sketchfab_model/Collada visual scene group/ChairDesk:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.341831, -1.49419e-08 ) ]
+}
+
+[sub_resource type="Animation" id=38]
+resource_name = "flaot"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sketchfab_model/Collada visual scene group/ChairDesk:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -90, 0, 0 ), Vector3( -70.719, -90, 90 ), Vector3( -82.055, 90, -90 ), Vector3( -82.055, 90, -90 ), Vector3( -90, 90, -90 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sketchfab_model/Collada visual scene group/ChairDesk:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0.341831, -1.49419e-08 ), Vector3( 0, 0.713711, -3.11973e-08 ), Vector3( 0, 0.790748, -3.45647e-08 ), Vector3( 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=39]
+resource_name = "moving"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sketchfab_model/Collada visual scene group/ChairDesk:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.5, 0.8, 1, 1.3, 1.5, 1.8, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -90, 0, 0 ), Vector3( -90, 15.231, 0 ), Vector3( -90, 37.407, 0 ), Vector3( -90, -62.077, 0 ), Vector3( -90, 0, 0 ), Vector3( -90, 15.231, 0 ), Vector3( -90, 37.407, 0 ), Vector3( -90, -62.077, 0 ), Vector3( -90, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=40]
+resource_name = "tumba"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sketchfab_model/Collada visual scene group/ChairDesk:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.3, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -90, 0, 0 ), Vector3( -72.693, -90, 90 ), Vector3( -67.882, 90, -90 ), Vector3( -77.851, 90, -90 ), Vector3( -1.874, -90, 90 ) ]
+}
+
+[sub_resource type="Animation" id=41]
+resource_name = "tumba2"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sketchfab_model/Collada visual scene group/ChairDesk:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( -90, 0, 0 ), Vector3( 0, -90, 90 ) ]
+}
+
+[sub_resource type="BoxShape" id=42]
+
+[sub_resource type="Animation" id=43]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sketchfab_model/Collada visual scene group/TeacherDeskAxis/Desk:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 4.02774e-07, -2.28145e-06, 20.024 ) ]
+}
+
+[sub_resource type="Animation" id=44]
+resource_name = "moving"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sketchfab_model/Collada visual scene group/TeacherDeskAxis/Desk:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 4.02774e-07, -2.28145e-06, 20.024 ), Vector3( 1.74091e-06, -4.49088e-06, 42.378 ) ]
+}
+
+[sub_resource type="DynamicFont" id=46]
+size = 80
+font_data = ExtResource( 12 )
+
+[sub_resource type="Environment" id=52]
 background_mode = 1
-background_color = Color( 0.203922, 0.168627, 0.168627, 1 )
+background_color = Color( 0.188235, 0.180392, 0.180392, 1 )
 
 [sub_resource type="BoxShape" id=3]
 extents = Vector3( 2.4214, 0.791623, 2.80066 )
+
+[sub_resource type="DynamicFont" id=48]
+size = 26
+font_data = ExtResource( 12 )
+
+[sub_resource type="DynamicFont" id=49]
+size = 42
+font_data = ExtResource( 12 )
+
+[sub_resource type="DynamicFont" id=50]
+size = 28
+font_data = ExtResource( 12 )
+
+[sub_resource type="DynamicFont" id=51]
+size = 27
+font_data = ExtResource( 12 )
+
+[sub_resource type="BoxShape" id=47]
 
 [node name="main" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0935078, 0 )
@@ -225,6 +1010,555 @@ data = {
 __meta__ = {
 "_editor_clip_": 0
 }
+
+[node name="StudentDesk" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.3239, 0.143249, 0 )
+
+[node name="StudentDesk2" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 0.973905, 0, 0.226957, 0, 1, 0, -0.226957, 0, 0.973905, 12.3235, 0.143249, -0.259935 )
+
+[node name="StudentDesk3" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.4111, 0.143249, 0 )
+
+[node name="StudentDesk4" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 0.977537, 0, -0.210762, 0, 1, 0, 0.210762, 0, 0.977537, 14.4498, 0.143249, 0 )
+
+[node name="StudentDesk25" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 0.992738, 0, 0.120293, 0, 1, 0, -0.120293, 0, 0.992738, 11.3239, 0.143249, 1.83243 )
+
+[node name="StudentDesk26" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.3841, 0.143249, 1.83243 )
+
+[node name="StudentDesk27" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.4111, 0.143249, 1.83243 )
+
+[node name="StudentDesk28" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.4498, 0.143249, 1.83243 )
+
+[node name="StudentDesk29" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.3239, 0.143249, 3.71889 )
+
+[node name="StudentDesk30" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.3841, 0.143249, 3.71889 )
+
+[node name="StudentDesk31" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.4111, 0.143249, 3.71889 )
+
+[node name="StudentDesk32" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 0.993436, 0, -0.192601, 0, 1.01193, 0, 0.192601, 0, 0.993436, 14.7742, 0.143249, 3.71889 )
+
+[node name="StudentDesk33" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 0.9956, 0, 0.0937086, 0, 1, 0, -0.0937086, 0, 0.9956, 17.3365, 0.143249, 2.97644 )
+
+[node name="StudentDesk34" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.3178, 0.143249, 2.13803 )
+
+[node name="StudentDesk35" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.3447, 0.143249, 2.13803 )
+
+[node name="StudentDesk36" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 0.984944, 0, 0.172875, 0, 1, 0, -0.172875, 0, 0.984944, 20.4589, 0.143249, 2.56789 )
+
+[node name="StudentDesk5" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.4498, 0.143249, -1.92326 )
+
+[node name="StudentDesk6" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.3887, 0.143249, -1.92326 )
+
+[node name="StudentDesk7" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.3724, 0.143249, -1.92326 )
+
+[node name="StudentDesk8" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.3353, 0.143249, -1.92326 )
+
+[node name="StudentDesk9" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 0.975396, 0, 0.220459, 0, 1, 0, -0.220459, 0, 0.975396, 11.3353, 0.143249, -3.67257 )
+
+[node name="StudentDesk10" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.3853, 0.143249, -3.9527 )
+
+[node name="StudentDesk11" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.4508, 0.143249, -3.67257 )
+
+[node name="StudentDesk12" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 0.982852, 0, -0.184397, 0, 1, 0, 0.184397, 0, 0.982852, 14.6323, 0.143249, -3.64966 )
+
+[node name="TriggerArea" type="Area" parent="building/flooors/StudentDesk12"]
+transform = Transform( 0.953167, 0, 2.98023e-08, 0, 1, 0, 1.49012e-08, 0, 1.05465, 2.98736, 0.996761, 0.659767 )
+script = ExtResource( 8 )
+
+[node name="CollisionShape" type="CollisionShape" parent="building/flooors/StudentDesk12/TriggerArea"]
+transform = Transform( 1.11221, 0, 0, 0, 0.551737, 0, 0, 0, 1.18299, -2.93221, 0.240439, -0.678763 )
+shape = SubResource( 4 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="building/flooors/StudentDesk12"]
+anims/RESET = SubResource( 5 )
+anims/flaot = SubResource( 6 )
+anims/moving = SubResource( 7 )
+anims/tumba = SubResource( 8 )
+anims/tumba2 = SubResource( 9 )
+
+[node name="StudentDesk58" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 0.999865, 0, 0.0164577, 0, 1, 0, -0.0164577, 0, 0.999865, -0.581314, 0.143249, 19.1761 )
+
+[node name="TriggerArea" type="Area" parent="building/flooors/StudentDesk58"]
+transform = Transform( 0.953167, 0, 2.98023e-08, 0, 1, 0, 1.49012e-08, 0, 1.05465, 2.98736, 0.996761, 0.659767 )
+script = ExtResource( 8 )
+
+[node name="CollisionShape" type="CollisionShape" parent="building/flooors/StudentDesk58/TriggerArea"]
+transform = Transform( 1.11221, 0, 0, 0, 0.551737, 0, 0, 0, 1.18299, -2.93221, 0.240439, -0.678763 )
+shape = SubResource( 4 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="building/flooors/StudentDesk58"]
+anims/RESET = SubResource( 16 )
+anims/flaot = SubResource( 17 )
+anims/moving = SubResource( 18 )
+anims/tumba = SubResource( 19 )
+anims/tumba2 = SubResource( 20 )
+
+[node name="StudentDesk71" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 0.982852, 0, -0.184397, 0, 1, 0, 0.184397, 0, 0.982852, -4.09243, 0.143249, 33.8883 )
+
+[node name="TriggerArea" type="Area" parent="building/flooors/StudentDesk71"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.996761, 0 )
+script = ExtResource( 8 )
+
+[node name="CollisionShape" type="CollisionShape" parent="building/flooors/StudentDesk71/TriggerArea"]
+transform = Transform( 1.11221, 0, 0, 0, 0.551737, 0, 0, 0, 1.18299, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="building/flooors/StudentDesk71"]
+anims/RESET = SubResource( 21 )
+anims/flaot = SubResource( 22 )
+anims/moving = SubResource( 23 )
+anims/tumba = SubResource( 24 )
+anims/tumba2 = SubResource( 25 )
+
+[node name="StudentDesk13" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 0.993903, 0, -0.110255, 0, 1, 0, 0.110255, 0, 0.993903, 17.1172, 0.143249, 0.434547 )
+
+[node name="TriggerArea2" type="Area" parent="building/flooors/StudentDesk13"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.14671, 0 )
+script = ExtResource( 9 )
+
+[node name="CollisionShape" type="CollisionShape" parent="building/flooors/StudentDesk13/TriggerArea2"]
+transform = Transform( 1.29237, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+shape = SubResource( 10 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="building/flooors/StudentDesk13"]
+anims/RESET = SubResource( 11 )
+anims/flaot = SubResource( 12 )
+anims/moving = SubResource( 13 )
+anims/tumba = SubResource( 14 )
+anims/tumba2 = SubResource( 15 )
+
+[node name="StudentDesk14" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 0.967423, 0, 0.253167, 0, 1, 0, -0.253167, 0, 0.967423, 18.2256, 0.143249, 0 )
+
+[node name="StudentDesk15" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 0.988228, 0, 0.152986, 0, 1, 0, -0.152986, 0, 0.988228, 19.2526, 0.143249, 0 )
+
+[node name="StudentDesk16" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.2913, 0.143249, 0 )
+
+[node name="StudentDesk17" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.2913, 0.143249, -1.92326 )
+
+[node name="StudentDesk18" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.2302, 0.143249, -1.70639 )
+
+[node name="StudentDesk19" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.2139, 0.143249, -1.92326 )
+
+[node name="StudentDesk20" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.1768, 0.143249, -1.92326 )
+
+[node name="StudentDesk21" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 0.982156, 0, -0.188067, 0, 1, 0, 0.188067, 0, 0.982156, 17.1768, 0.143249, -3.67257 )
+
+[node name="StudentDesk22" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.2268, 0.143249, -3.67257 )
+
+[node name="StudentDesk23" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.2923, 0.143249, -3.83981 )
+
+[node name="StudentDesk24" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.3517, 0.143249, -3.67257 )
+
+[node name="StudentDesk37" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2987, 0.143249, 29.7811 )
+
+[node name="StudentDesk38" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 0.973905, 0, 0.226957, 0, 1, 0, -0.226957, 0, 0.973905, -9.29904, 0.143249, 29.5211 )
+
+[node name="StudentDesk39" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.21153, 0.143249, 29.7811 )
+
+[node name="StudentDesk40" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 0.977537, 0, -0.210762, 0, 1, 0, 0.210762, 0, 0.977537, -7.17283, 0.143249, 29.7811 )
+
+[node name="StudentDesk59" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( -0.999585, 0, 0.0288114, 0, 1, 0, -0.0288114, 0, -0.999585, -10.2987, 0.143249, 8.90599 )
+
+[node name="StudentDesk77" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( -0.980039, 0, -0.198804, 0, 1, 0, 0.198804, 0, -0.980039, -9.29904, 0.143249, 8.64606 )
+
+[node name="StudentDesk78" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( -0.999585, 0, 0.0288114, 0, 1, 0, -0.0288114, 0, -0.999585, -8.21153, 0.143249, 8.90599 )
+
+[node name="StudentDesk79" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( -0.971059, 0, 0.238839, 0, 1, 0, -0.238839, 0, -0.971059, -7.17283, 0.143249, 8.90599 )
+
+[node name="StudentDesk80" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( -0.999585, 0, 0.0288114, 0, 1, 0, -0.0288114, 0, -0.999585, -5.99448, 0.143249, 8.90599 )
+
+[node name="StudentDesk81" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( -0.980039, 0, -0.198804, 0, 1, 0, 0.198804, 0, -0.980039, -4.99484, 0.143249, 8.64606 )
+
+[node name="StudentDesk82" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( -0.999585, 0, 0.0288114, 0, 1, 0, -0.0288114, 0, -0.999585, -3.90732, 0.143249, 8.90599 )
+
+[node name="StudentDesk83" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( -0.971059, 0, 0.238839, 0, 1, 0, -0.238839, 0, -0.971059, -2.86862, 0.143249, 8.90599 )
+
+[node name="StudentDesk84" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( -0.999585, 0, 0.0288114, 0, 1, 0, -0.0288114, 0, -0.999585, -1.59652, 0.143249, 8.90599 )
+
+[node name="StudentDesk85" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( -0.980039, 0, -0.198804, 0, 1, 0, 0.198804, 0, -0.980039, -0.596879, 0.143249, 8.64606 )
+
+[node name="StudentDesk88" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 0.999741, 0, -0.0227396, 0, 1, 0, 0.0227396, 0, 0.999741, 13.6619, 0.143249, 20.4316 )
+
+[node name="StudentDesk90" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 0.986294, 0, -0.164996, 0, 1, 0, 0.164996, 0, 0.986294, 12.6096, 0.143249, 20.4582 )
+
+[node name="StudentDesk41" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 0.992738, 0, 0.120293, 0, 1, 0, -0.120293, 0, 0.992738, -10.2987, 0.143249, 31.6135 )
+
+[node name="StudentDesk42" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.23847, 0.143249, 31.6135 )
+
+[node name="StudentDesk43" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.21153, 0.143249, 31.6135 )
+
+[node name="StudentDesk44" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.17283, 0.143249, 31.6135 )
+
+[node name="StudentDesk45" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 0.911454, 0, -0.411403, 0, 1, 0, 0.411403, 0, 0.911454, -10.2987, 0.143249, 34.9825 )
+
+[node name="StudentDesk46" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.23847, 0.143249, 34.6452 )
+
+[node name="StudentDesk47" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.21153, 0.124452, 33.75 )
+
+[node name="StudentDesk48" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 0.98172, 0, -0.190329, 0, 1, 0, 0.190329, 0, 0.98172, -7.07511, 0.143249, 34.3529 )
+
+[node name="StudentDesk49" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 0.9956, 0, 0.0937086, 0, 1, 0, -0.0937086, 0, 0.9956, -4.365, 0.143249, 31.6029 )
+
+[node name="StudentDesk50" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.30478, 0.143249, 31.6029 )
+
+[node name="StudentDesk51" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.27784, 0.143249, 31.6029 )
+
+[node name="StudentDesk52" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 0.984944, 0, 0.172875, 0, 1, 0, -0.172875, 0, 0.984944, -1.16369, 0.143249, 32.0327 )
+
+[node name="StudentDesk53" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.17283, 0.143249, 27.8578 )
+
+[node name="StudentDesk54" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 0.955988, 0, -0.293406, 0, 1, 0, 0.293406, 0, 0.955988, -8.23391, 0.143249, 27.5416 )
+
+[node name="StudentDesk55" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.25023, 0.143249, 27.5416 )
+
+[node name="StudentDesk56" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2872, 0.143249, 27.5416 )
+
+[node name="StudentDesk57" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 0.975396, 0, 0.220459, 0, 1, 0, -0.220459, 0, 0.975396, -10.2872, 0.143249, 25.7923 )
+
+[node name="StudentDesk60" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 0.982852, 0, -0.184397, 0, 1, 0, 0.184397, 0, 0.982852, -6.89218, 0.143249, 24.8809 )
+
+[node name="TriggerArea3" type="Area" parent="building/flooors/StudentDesk60"]
+script = ExtResource( 11 )
+
+[node name="CollisionShape" type="CollisionShape" parent="building/flooors/StudentDesk60/TriggerArea3"]
+transform = Transform( 1, 0, 0, 0, 0.50893, 0, 0, 0, 1, 0, 1.01308, 0 )
+shape = SubResource( 26 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="building/flooors/StudentDesk60"]
+anims/RESET = SubResource( 27 )
+anims/flaot = SubResource( 28 )
+anims/moving = SubResource( 29 )
+anims/tumba = SubResource( 30 )
+anims/tumba2 = SubResource( 31 )
+
+[node name="StudentDesk89" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 0.982852, 0, -0.184397, 0, 1, 0, 0.184397, 0, 0.982852, -10.2164, 0.143249, 18.8681 )
+
+[node name="TriggerArea3" type="Area" parent="building/flooors/StudentDesk89"]
+script = ExtResource( 11 )
+
+[node name="CollisionShape" type="CollisionShape" parent="building/flooors/StudentDesk89/TriggerArea3"]
+transform = Transform( 1, 0, 0, 0, 0.50893, 0, 0, 0, 1, 0, 1.01308, 0 )
+shape = SubResource( 26 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="building/flooors/StudentDesk89"]
+anims/RESET = SubResource( 32 )
+anims/flaot = SubResource( 33 )
+anims/moving = SubResource( 34 )
+anims/tumba = SubResource( 35 )
+anims/tumba2 = SubResource( 36 )
+
+[node name="StudentDesk72" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 0.982852, 0, -0.184397, 0, 1, 0, 0.184397, 0, 0.982852, -8.91726, 0.143249, 25.2063 )
+
+[node name="TriggerArea3" type="Area" parent="building/flooors/StudentDesk72"]
+script = ExtResource( 11 )
+
+[node name="CollisionShape" type="CollisionShape" parent="building/flooors/StudentDesk72/TriggerArea3"]
+transform = Transform( 1, 0, 0, 0, 0.50893, 0, 0, 0, 1, 0, 1.01308, 0 )
+shape = SubResource( 26 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="building/flooors/StudentDesk72"]
+anims/RESET = SubResource( 37 )
+anims/flaot = SubResource( 38 )
+anims/moving = SubResource( 39 )
+anims/tumba = SubResource( 40 )
+anims/tumba2 = SubResource( 41 )
+
+[node name="StudentDesk61" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 0.993903, 0, -0.110255, 0, 1, 0, 0.110255, 0, 0.993903, -4.45719, 0.143249, 29.0534 )
+
+[node name="StudentDesk62" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 0.967423, 0, 0.253167, 0, 1, 0, -0.253167, 0, 0.967423, -3.39697, 0.143249, 29.0534 )
+
+[node name="StudentDesk63" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 0.988228, 0, 0.152986, 0, 1, 0, -0.152986, 0, 0.988228, -2.02145, 0.143249, 28.9995 )
+
+[node name="StudentDesk64" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 0.972398, 0, 0.233327, 0, 1, 0, -0.233327, 0, 0.972398, -0.751636, 0.143249, 28.2894 )
+
+[node name="StudentDesk65" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.39242, 0.143249, 27.347 )
+
+[node name="StudentDesk66" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.40873, 0.143249, 27.1302 )
+
+[node name="StudentDesk67" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.44575, 0.143249, 27.1302 )
+
+[node name="StudentDesk73" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.65983, 0.143249, 19.1933 )
+
+[node name="StudentDesk74" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.85087, 0.143249, 19.1933 )
+
+[node name="StudentDesk75" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( -0.984503, 0, -0.175367, 0, 1, 0, 0.175367, 0, -0.984503, -4.61889, 0.143249, 18.3227 )
+
+[node name="StudentDesk76" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( -0.933186, 0, 0.359394, 0, 1, 0, -0.359394, 0, -0.933186, -5.63996, 0.143249, 18.3364 )
+
+[node name="StudentDesk86" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( -0.984503, 0, -0.175367, 0, 1, 0, 0.175367, 0, -0.984503, -7.95809, 0.143249, 19.2961 )
+
+[node name="StudentDesk87" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( -0.933186, 0, 0.359394, 0, 1, 0, -0.359394, 0, -0.933186, -8.97687, 0.143249, 19.3108 )
+
+[node name="StudentDesk68" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 0.982156, 0, -0.188067, 0, 1, 0, 0.188067, 0, 0.982156, -4.44575, 0.143249, 25.3809 )
+
+[node name="StudentDesk69" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.70185, 0.143249, 25.3809 )
+
+[node name="StudentDesk70" parent="building/flooors" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.45004, 0.143249, 25.2136 )
+
+[node name="table" parent="building/flooors" instance=ExtResource( 5 )]
+transform = Transform( -0.999699, 0, 0.0245369, 0, 1, 0, -0.0245369, 0, -0.999699, 15.3137, 0.352085, -6.37885 )
+
+[node name="table3" parent="building/flooors" instance=ExtResource( 5 )]
+transform = Transform( -0.999699, 0, 0.0245369, 0, 1, 0, -0.0245369, 0, -0.999699, -4.33017, 0.352085, 19.6 )
+
+[node name="table5" parent="building/flooors" instance=ExtResource( 5 )]
+transform = Transform( 0.923826, 0, 0.382812, 0, 1, 0, -0.382812, 0, 0.923826, -9.4649, 0.352085, 10.3089 )
+
+[node name="table6" parent="building/flooors" instance=ExtResource( 5 )]
+transform = Transform( 0.996377, 0, 0.0850517, 0, 1, 0, -0.0850517, 0, 0.996377, -7.4484, 0.352085, 9.92319 )
+
+[node name="table7" parent="building/flooors" instance=ExtResource( 5 )]
+transform = Transform( 0.996377, 0, 0.0850517, 0, 1, 0, -0.0850517, 0, 0.996377, -5.62332, 0.352085, 9.7674 )
+
+[node name="table8" parent="building/flooors" instance=ExtResource( 5 )]
+transform = Transform( 0.999064, 0, -0.0432532, 0, 1, 0, 0.0432532, 0, 0.999064, -3.59683, 0.352085, 9.89297 )
+
+[node name="TableTrigger" type="Area" parent="building/flooors/table8"]
+transform = Transform( 1, 0, -7.45058e-09, 0, 1, 0, 7.45058e-09, 0, 1, 0, 0, 0 )
+script = ExtResource( 10 )
+
+[node name="CollisionShape" type="CollisionShape" parent="building/flooors/table8/TableTrigger"]
+transform = Transform( 2.48949, 0, 7.45058e-09, 0, 1.89809, 0, 1.49012e-08, 0, 1.89809, 0, 0, 0 )
+shape = SubResource( 42 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="building/flooors/table8"]
+anims/RESET = SubResource( 43 )
+anims/moving = SubResource( 44 )
+
+[node name="table4" parent="building/flooors" instance=ExtResource( 5 )]
+transform = Transform( -0.988604, 0, 0.150536, 0, 1, 0, -0.150536, 0, -0.988604, -6.23686, 0.352085, 19.5756 )
+
+[node name="table2" parent="building/flooors" instance=ExtResource( 5 )]
+transform = Transform( -0.999699, 0, 0.0245369, 0, 1, 0, -0.0245369, 0, -0.999699, -6.29602, 0.352085, 22.8772 )
+
+[node name="computertable" parent="building/flooors" instance=ExtResource( 15 )]
+transform = Transform( 0.701329, 0, 0, 0, 0.30057, 0, 0, 0, 0.324805, 10.7824, 1.35117, 25.8839 )
+
+[node name="computertable17" parent="building/flooors" instance=ExtResource( 15 )]
+transform = Transform( -0.0107835, 0, 0.324767, 0, 0.30057, 0, -0.701246, 0, -0.00499412, 10.8289, 1.35117, 17.5737 )
+
+[node name="computertable47" parent="building/flooors" instance=ExtResource( 15 )]
+transform = Transform( 0.0092903, 0, -0.324776, 0, 0.30057, 0, 0.701268, 0, 0.00430259, 10.749, 1.35117, 11.5452 )
+
+[node name="computertable30" parent="building/flooors" instance=ExtResource( 15 )]
+transform = Transform( 0.0092903, 0, -0.324776, 0, 0.30057, 0, 0.701268, 0, 0.00430259, -0.84498, 1.35117, 2.45478 )
+
+[node name="computertable2" parent="building/flooors" instance=ExtResource( 15 )]
+transform = Transform( 0.701329, 0, 0, 0, 0.30057, 0, 0, 0, 0.324805, 10.7824, 1.35117, 27.5946 )
+
+[node name="computertable3" parent="building/flooors" instance=ExtResource( 15 )]
+transform = Transform( 0.701329, 0, 0, 0, 0.30057, 0, 0, 0, 0.324805, 10.7824, 1.35117, 29.3081 )
+
+[node name="computertable4" parent="building/flooors" instance=ExtResource( 15 )]
+transform = Transform( 0.701329, 0, 0, 0, 0.30057, 0, 0, 0, 0.324805, 10.7824, 1.35117, 31.0161 )
+
+[node name="computertable9" parent="building/flooors" instance=ExtResource( 15 )]
+transform = Transform( 0.701329, 0, 0, 0, 0.30057, 0, 0, 0, 0.324805, 16.1925, 1.35117, 25.8839 )
+
+[node name="computertable10" parent="building/flooors" instance=ExtResource( 15 )]
+transform = Transform( 0.701329, 0, 0, 0, 0.30057, 0, 0, 0, 0.324805, 16.1925, 1.35117, 27.5946 )
+
+[node name="computertable11" parent="building/flooors" instance=ExtResource( 15 )]
+transform = Transform( 0.701329, 0, 0, 0, 0.30057, 0, 0, 0, 0.324805, 16.1925, 1.35117, 29.3081 )
+
+[node name="computertable12" parent="building/flooors" instance=ExtResource( 15 )]
+transform = Transform( 0.701329, 0, 0, 0, 0.30057, 0, 0, 0, 0.324805, 16.1925, 1.35117, 31.0161 )
+
+[node name="computertable18" parent="building/flooors" instance=ExtResource( 15 )]
+transform = Transform( 0.701329, 0, 0, 0, 0.30057, 0, 0, 0, 0.324805, 18.6106, 1.35117, 9.10525 )
+
+[node name="computertable19" parent="building/flooors" instance=ExtResource( 15 )]
+transform = Transform( 0.701329, 0, 0, 0, 0.30057, 0, 0, 0, 0.324805, 18.6106, 1.35117, 10.8159 )
+
+[node name="computertable20" parent="building/flooors" instance=ExtResource( 15 )]
+transform = Transform( 0.701329, 0, 0, 0, 0.30057, 0, 0, 0, 0.324805, 18.6106, 1.35117, 12.5295 )
+
+[node name="computertable21" parent="building/flooors" instance=ExtResource( 15 )]
+transform = Transform( 0.701329, 0, 0, 0, 0.30057, 0, 0, 0, 0.324805, 18.6106, 1.35117, 14.2374 )
+
+[node name="computertable26" parent="building/flooors" instance=ExtResource( 15 )]
+transform = Transform( 0.701329, 0, 0, 0, 0.30057, 0, 0, 0, 0.324805, 18.6106, 1.35117, 18.2488 )
+
+[node name="computertable27" parent="building/flooors" instance=ExtResource( 15 )]
+transform = Transform( 0.701329, 0, 0, 0, 0.30057, 0, 0, 0, 0.324805, 18.6106, 1.35117, 19.9568 )
+
+[node name="computertable28" parent="building/flooors" instance=ExtResource( 15 )]
+transform = Transform( 0.701329, 0, 0, 0, 0.30057, 0, 0, 0, 0.324805, 15.1195, 1.35117, 18.2488 )
+
+[node name="computertable29" parent="building/flooors" instance=ExtResource( 15 )]
+transform = Transform( 0.701329, 0, 0, 0, 0.30057, 0, 0, 0, 0.324805, 15.1195, 1.35117, 19.9568 )
+
+[node name="computertable22" parent="building/flooors" instance=ExtResource( 15 )]
+transform = Transform( 0.701329, 0, 0, 0, 0.30057, 0, 0, 0, 0.324805, 14.9844, 1.35117, 9.10525 )
+
+[node name="computertable23" parent="building/flooors" instance=ExtResource( 15 )]
+transform = Transform( 0.701329, 0, 0, 0, 0.30057, 0, 0, 0, 0.324805, 14.9844, 1.35117, 10.8159 )
+
+[node name="computertable24" parent="building/flooors" instance=ExtResource( 15 )]
+transform = Transform( 0.701329, 0, 0, 0, 0.30057, 0, 0, 0, 0.324805, 14.9844, 1.35117, 12.5295 )
+
+[node name="computertable25" parent="building/flooors" instance=ExtResource( 15 )]
+transform = Transform( 0.701329, 0, 0, 0, 0.30057, 0, 0, 0, 0.324805, 14.9844, 1.35117, 14.2374 )
+
+[node name="computertable31" parent="building/flooors" instance=ExtResource( 15 )]
+transform = Transform( -0.701299, 0, -0.00299885, 0, 0.30057, 0, 0.00647522, 0, -0.324791, -4.87352, 1.35117, 0.109399 )
+
+[node name="computertable32" parent="building/flooors" instance=ExtResource( 15 )]
+transform = Transform( -0.701299, 0, -0.00299885, 0, 0.30057, 0, 0.00647522, 0, -0.324791, -4.87352, 1.35117, 1.82004 )
+
+[node name="computertable33" parent="building/flooors" instance=ExtResource( 15 )]
+transform = Transform( -0.701299, 0, -0.00299885, 0, 0.30057, 0, 0.00647522, 0, -0.324791, -4.87352, 1.35117, 3.53362 )
+
+[node name="computertable34" parent="building/flooors" instance=ExtResource( 15 )]
+transform = Transform( -0.701299, 0, -0.00299885, 0, 0.30057, 0, 0.00647522, 0, -0.324791, -4.87352, 1.35117, 5.24158 )
+
+[node name="computertable35" parent="building/flooors" instance=ExtResource( 15 )]
+transform = Transform( -0.701299, 0, -0.00299885, 0, 0.30057, 0, 0.00647522, 0, -0.324791, -8.49974, 1.35117, 0.109399 )
+
+[node name="computertable36" parent="building/flooors" instance=ExtResource( 15 )]
+transform = Transform( -0.701299, 0, -0.00299885, 0, 0.30057, 0, 0.00647522, 0, -0.324791, -8.49974, 1.35117, 1.82004 )
+
+[node name="computertable37" parent="building/flooors" instance=ExtResource( 15 )]
+transform = Transform( -0.701299, 0, -0.00299885, 0, 0.30057, 0, 0.00647522, 0, -0.324791, -8.49974, 1.35117, 3.53362 )
+
+[node name="computertable38" parent="building/flooors" instance=ExtResource( 15 )]
+transform = Transform( -0.701299, 0, -0.00299885, 0, 0.30057, 0, 0.00647522, 0, -0.324791, -8.49974, 1.35117, 5.24158 )
+
+[node name="computertable39" parent="building/flooors" instance=ExtResource( 15 )]
+transform = Transform( -0.701299, 0, -0.00299885, 0, 0.30057, 0, 0.00647522, 0, -0.324791, -8.49974, 1.35117, -9.09554 )
+
+[node name="computertable40" parent="building/flooors" instance=ExtResource( 15 )]
+transform = Transform( -0.701299, 0, -0.00299885, 0, 0.30057, 0, 0.00647522, 0, -0.324791, -8.49974, 1.35117, -7.3849 )
+
+[node name="computertable41" parent="building/flooors" instance=ExtResource( 15 )]
+transform = Transform( -0.701299, 0, -0.00299885, 0, 0.30057, 0, 0.00647522, 0, -0.324791, -8.49974, 1.35117, -5.67132 )
+
+[node name="computertable45" parent="building/flooors" instance=ExtResource( 15 )]
+transform = Transform( -0.701299, 0, -0.00299885, 0, 0.30057, 0, 0.00647522, 0, -0.324791, -8.48339, 1.35117, -3.90071 )
+
+[node name="computertable46" parent="building/flooors" instance=ExtResource( 15 )]
+transform = Transform( -0.701299, 0, -0.00299885, 0, 0.30057, 0, 0.00647522, 0, -0.324791, -4.9537, 1.35117, -3.9333 )
+
+[node name="computertable42" parent="building/flooors" instance=ExtResource( 15 )]
+transform = Transform( -0.701299, 0, -0.00299885, 0, 0.30057, 0, 0.00647522, 0, -0.324791, -4.9539, 1.35117, -9.09554 )
+
+[node name="computertable43" parent="building/flooors" instance=ExtResource( 15 )]
+transform = Transform( -0.701299, 0, -0.00299885, 0, 0.30057, 0, 0.00647522, 0, -0.324791, -4.9539, 1.35117, -7.3849 )
+
+[node name="computertable44" parent="building/flooors" instance=ExtResource( 15 )]
+transform = Transform( -0.701299, 0, -0.00299885, 0, 0.30057, 0, 0.00647522, 0, -0.324791, -4.9539, 1.35117, -5.67132 )
+
+[node name="computertable5" parent="building/flooors" instance=ExtResource( 15 )]
+transform = Transform( -0.701327, 0, -0.000770959, 0, 0.30057, 0, 0.00166468, 0, -0.324804, 14.6795, 1.35117, 25.8839 )
+
+[node name="computertable6" parent="building/flooors" instance=ExtResource( 15 )]
+transform = Transform( -0.701327, 0, -0.000770959, 0, 0.30057, 0, 0.00166468, 0, -0.324804, 14.6795, 1.35117, 27.5946 )
+
+[node name="computertable7" parent="building/flooors" instance=ExtResource( 15 )]
+transform = Transform( -0.701327, 0, -0.000770959, 0, 0.30057, 0, 0.00166468, 0, -0.324804, 14.6795, 1.35117, 29.3081 )
+
+[node name="computertable8" parent="building/flooors" instance=ExtResource( 15 )]
+transform = Transform( -0.701327, 0, -0.000770959, 0, 0.30057, 0, 0.00166468, 0, -0.324804, 14.6795, 1.35117, 31.0161 )
+
+[node name="computertable13" parent="building/flooors" instance=ExtResource( 15 )]
+transform = Transform( -0.701327, 0, -0.000770959, 0, 0.30057, 0, 0.00166468, 0, -0.324804, 20.5056, 1.35117, 25.8839 )
+
+[node name="computertable14" parent="building/flooors" instance=ExtResource( 15 )]
+transform = Transform( -0.701327, 0, -0.000770959, 0, 0.30057, 0, 0.00166468, 0, -0.324804, 20.5056, 1.35117, 27.5946 )
+
+[node name="computertable15" parent="building/flooors" instance=ExtResource( 15 )]
+transform = Transform( -0.701327, 0, -0.000770959, 0, 0.30057, 0, 0.00166468, 0, -0.324804, 20.5056, 1.35117, 29.3081 )
+
+[node name="computertable16" parent="building/flooors" instance=ExtResource( 15 )]
+transform = Transform( -0.701327, 0, -0.000770959, 0, 0.30057, 0, 0.00166468, 0, -0.324804, 20.5056, 1.35117, 31.0161 )
 
 [node name="building2" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.66436, 0 )
@@ -778,8 +2112,20 @@ __meta__ = {
 [node name="Player" parent="." instance=ExtResource( 2 )]
 transform = Transform( -0.823655, -0.000296808, -0.042285, -0.000304272, 0.800494, -4.04817e-05, 0.0397046, -2.26346e-05, -0.877184, 4.17058, 0.181521, -16.843 )
 
+[node name="BoundaryUI" type="CanvasLayer" parent="Player"]
+
+[node name="Label" type="Label" parent="Player/BoundaryUI"]
+visible = false
+margin_left = 217.0
+margin_top = 226.0
+margin_right = 786.0
+margin_bottom = 331.0
+custom_colors/font_color = Color( 0.811765, 0.0745098, 0.0745098, 1 )
+custom_fonts/font = SubResource( 46 )
+text = "Turn back now!"
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 4 )
+environment = SubResource( 52 )
 
 [node name="spawntrap" type="Area" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 0.50833, 0.864706, 0.051238, -4.64494 )
@@ -790,7 +2136,7 @@ transform = Transform( 0.990618, 0, 0, 0, 2.45477, 0, 0, 0, 1.29477, -0.952592, 
 shape = SubResource( 3 )
 
 [node name="Position3D" type="Position3D" parent="spawntrap"]
-transform = Transform( -0.0337656, 0, -0.99943, 0, 1, 0, 0.99943, 0, -0.0337656, 8.96052, 0.704796, -8.94888 )
+transform = Transform( -0.024572, 0, 0.999698, 0, 1, 0, -0.999698, 0, -0.024572, 8.96052, 0.704796, -8.94888 )
 
 [node name="spawntrap2" type="Area" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 0.50833, 1.142, 0.051238, 38.8036 )
@@ -814,6 +2160,111 @@ shape = SubResource( 3 )
 [node name="Position3D" type="Position3D" parent="spawntrap3"]
 transform = Transform( -0.0337656, 0, -0.99943, 0, 1, 0, 0.99943, 0, -0.0337656, 6.25883, 3.5531, -4.60356 )
 
+[node name="PauseMenuLayer" type="CanvasLayer" parent="."]
+pause_mode = 2
+
+[node name="PauseMenu" type="Control" parent="PauseMenuLayer"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 14 )
+
+[node name="Panel" type="Panel" parent="PauseMenuLayer/PauseMenu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -226.5
+margin_top = -188.5
+margin_right = 226.5
+margin_bottom = 188.5
+
+[node name="resume" type="Button" parent="PauseMenuLayer/PauseMenu/Panel"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -130.0
+margin_top = -86.5
+margin_right = -36.0
+margin_bottom = -42.5
+custom_fonts/font = SubResource( 48 )
+text = "resume"
+
+[node name="VolumeSlider" type="HSlider" parent="PauseMenuLayer/PauseMenu/Panel"]
+margin_left = 73.5
+margin_top = 175.5
+margin_right = 376.5
+margin_bottom = 265.5
+
+[node name="MuteCheckBox" type="CheckBox" parent="PauseMenuLayer/PauseMenu/Panel"]
+margin_left = 147.5
+margin_top = 48.5
+margin_right = 361.5
+margin_bottom = 134.5
+custom_fonts/font = SubResource( 49 )
+text = "mute"
+
+[node name="Volume" type="Label" parent="PauseMenuLayer/PauseMenu/Panel"]
+margin_left = 78.5
+margin_top = 165.5
+margin_right = 168.5
+margin_bottom = 202.5
+custom_fonts/font = SubResource( 50 )
+text = "Volume"
+
+[node name="Quit" type="Button" parent="PauseMenuLayer/PauseMenu/Panel"]
+margin_left = 256.5
+margin_top = 290.5
+margin_right = 353.5
+margin_bottom = 333.5
+custom_fonts/font = SubResource( 51 )
+text = "quit"
+
+[node name="BoundaryTrigger" type="Area" parent="."]
+transform = Transform( 1.52883, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -19.9277 )
+script = ExtResource( 13 )
+
+[node name="StaticBody" type="StaticBody" parent="BoundaryTrigger"]
+
+[node name="CollisionShape" type="CollisionShape" parent="BoundaryTrigger/StaticBody"]
+transform = Transform( 1.06462, 0, 0, 0, 1.5133, 0, 0, 0, 6.13669, -0.81926, 1.84095, 0 )
+shape = SubResource( 47 )
+
+[node name="CollisionShape" type="CollisionShape" parent="BoundaryTrigger"]
+transform = Transform( 1.06462, 0, 0, 0, 1.5133, 0, 0, 0, 6.13669, -0.132938, 1.84095, 0 )
+shape = SubResource( 47 )
+
+[node name="BoundaryTrigger2" type="Area" parent="."]
+transform = Transform( -0.00764438, 0, 0.999971, 0, 1, 0, -0.999971, 0, -0.00764438, 5.12478, 0.69879, 46.4778 )
+script = ExtResource( 13 )
+
+[node name="StaticBody" type="StaticBody" parent="BoundaryTrigger2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="BoundaryTrigger2/StaticBody"]
+transform = Transform( 1.0634, 0, -3.72529e-09, 0, 1.51156, 0, 0, 0, 6.12963, -0.132938, 1.84095, 0 )
+shape = SubResource( 47 )
+
+[node name="CollisionShape" type="CollisionShape" parent="BoundaryTrigger2"]
+transform = Transform( 1.06462, 0, 0, 0, 1.5133, 0, 0, 0, 6.13669, -0.132938, 1.84095, 0 )
+shape = SubResource( 47 )
+
+[connection signal="body_exited" from="building/flooors/StudentDesk12/TriggerArea" to="building/flooors/StudentDesk12/TriggerArea" method="_on_TriggerArea_body_exited"]
+[connection signal="body_exited" from="building/flooors/StudentDesk58/TriggerArea" to="building/flooors/StudentDesk58/TriggerArea" method="_on_TriggerArea_body_exited"]
+[connection signal="body_exited" from="building/flooors/StudentDesk71/TriggerArea" to="building/flooors/StudentDesk71/TriggerArea" method="_on_TriggerArea_body_exited"]
+[connection signal="body_exited" from="building/flooors/StudentDesk13/TriggerArea2" to="building/flooors/StudentDesk13/TriggerArea2" method="_on_TriggerArea2_body_exited"]
+[connection signal="body_exited" from="building/flooors/StudentDesk60/TriggerArea3" to="building/flooors/StudentDesk60/TriggerArea3" method="_on_TriggerArea3_body_exited"]
+[connection signal="body_exited" from="building/flooors/StudentDesk89/TriggerArea3" to="building/flooors/StudentDesk89/TriggerArea3" method="_on_TriggerArea3_body_exited"]
+[connection signal="body_exited" from="building/flooors/StudentDesk72/TriggerArea3" to="building/flooors/StudentDesk72/TriggerArea3" method="_on_TriggerArea3_body_exited"]
+[connection signal="body_exited" from="building/flooors/table8/TableTrigger" to="building/flooors/table8/TableTrigger" method="_on_TableTrigger_body_exited"]
 [connection signal="body_entered" from="spawntrap" to="spawntrap" method="_on_spawntrap_body_entered"]
 [connection signal="body_entered" from="spawntrap2" to="spawntrap2" method="_on_spawntrap_body_entered"]
 [connection signal="body_entered" from="spawntrap3" to="spawntrap3" method="_on_spawntrap_body_entered"]
+[connection signal="pressed" from="PauseMenuLayer/PauseMenu/Panel/resume" to="PauseMenuLayer/PauseMenu" method="_on_resume_pressed"]
+[connection signal="value_changed" from="PauseMenuLayer/PauseMenu/Panel/VolumeSlider" to="PauseMenuLayer/PauseMenu" method="_on_VolumeSlider_value_changed"]
+[connection signal="toggled" from="PauseMenuLayer/PauseMenu/Panel/MuteCheckBox" to="PauseMenuLayer/PauseMenu" method="_on_MuteCheckBox_toggled"]
+[connection signal="pressed" from="PauseMenuLayer/PauseMenu/Panel/Quit" to="PauseMenuLayer/PauseMenu" method="_on_Quit_pressed"]
+[connection signal="body_entered" from="BoundaryTrigger" to="BoundaryTrigger" method="_on_BoundaryTrigger_body_entered"]
+[connection signal="body_exited" from="BoundaryTrigger" to="BoundaryTrigger" method="_on_BoundaryTrigger_body_exited"]
+[connection signal="body_entered" from="BoundaryTrigger2" to="BoundaryTrigger2" method="_on_BoundaryTrigger_body_entered"]
+[connection signal="body_exited" from="BoundaryTrigger2" to="BoundaryTrigger2" method="_on_BoundaryTrigger_body_exited"]

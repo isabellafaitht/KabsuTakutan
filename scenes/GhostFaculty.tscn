@@ -1009,7 +1009,6 @@ tracks/27/keys = PoolRealArray( 0, 1, 0, 0, 0, 0.031827, 0.00747804, 0.0038667, 
 extents = Vector3( 1, 1.76476, 0.931438 )
 
 [node name="GhostFaculty" type="KinematicBody"]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0 )
 script = ExtResource( 5 )
 
 [node name="Sketchfab_model" type="Spatial" parent="."]
@@ -1021,7 +1020,7 @@ transform = Transform( 0.01, 0, 0, 0, 0, -0.01, 0, 0.01, 0, 0, 0, 0 )
 [node name="Object_2" type="Spatial" parent="Sketchfab_model/15adb26189344ca4902961d45800f990fbx"]
 
 [node name="RootNode" type="Spatial" parent="Sketchfab_model/15adb26189344ca4902961d45800f990fbx/Object_2"]
-transform = Transform( 200, 0, 0, 0, 200, 0, 0, 0, 200, 0, 0, 0 )
+transform = Transform( -200, 0, -1.74846e-05, 0, 200, 0, 1.74846e-05, 0, -200, 0, 0, 0 )
 
 [node name="Object_4" type="Spatial" parent="Sketchfab_model/15adb26189344ca4902961d45800f990fbx/Object_2/RootNode"]
 

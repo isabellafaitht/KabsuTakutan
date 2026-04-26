@@ -16,3 +16,7 @@ func interact():
 		
 		# Optional: Play a creaky door sound here!
 		# $AudioStreamPlayer3D.play()
+
+
+
+
