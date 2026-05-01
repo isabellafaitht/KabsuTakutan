@@ -6190,7 +6190,6 @@ font_data = ExtResource( 12 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0935078, 0 )
 
 [node name="firstFloorbuilding" type="Spatial" parent="."]
-visible = false
 
 [node name="walls" type="GridMap" parent="firstFloorbuilding"]
 mesh_library = ExtResource( 1 )
@@ -8978,6 +8977,7 @@ transform = Transform( -0.701267, 0, -0.00433091, 0, 0.30057, 0, 0.00935144, 0, 
 
 [node name="building4" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16.6387, 0 )
+visible = false
 
 [node name="walls" type="GridMap" parent="building4"]
 mesh_library = ExtResource( 1 )
@@ -10180,22 +10180,8 @@ transform = Transform( -0.701267, 0, -0.00433091, 0, 0.30057, 0, 0.00935144, 0, 
 [node name="computertable267" parent="building4" instance=ExtResource( 15 )]
 transform = Transform( -0.701267, 0, -0.00433091, 0, 0.30057, 0, 0.00935144, 0, -0.324776, 20.5283, 1.32046, 1.54802 )
 
-[node name="Player2" parent="building4" instance=ExtResource( 2 )]
-transform = Transform( -0.823655, -0.000296808, -0.042285, -0.000304272, 0.800494, -4.04817e-05, 0.0397046, -2.26346e-05, -0.877184, 12.3985, -16.4572, -6.29903 )
-
-[node name="BoundaryUI" type="CanvasLayer" parent="building4/Player2"]
-
-[node name="Label" type="Label" parent="building4/Player2/BoundaryUI"]
-margin_left = 217.0
-margin_top = 226.0
-margin_right = 786.0
-margin_bottom = 331.0
-custom_colors/font_color = Color( 0.811765, 0.0745098, 0.0745098, 1 )
-custom_fonts/font = SubResource( 46 )
-text = "Turn back now!"
-
 [node name="Player" parent="." instance=ExtResource( 2 )]
-transform = Transform( -0.823655, -0.000296808, -0.042285, -0.000304272, 0.800494, -4.04817e-05, 0.0397046, -2.26346e-05, -0.877184, 12.3985, 0.181478, -6.29903 )
+transform = Transform( -0.823655, -0.000296808, -0.042285, -0.000304272, 0.800494, -4.04817e-05, 0.0397046, -2.26346e-05, -0.877184, 5.09247, 0.178482, -16.4672 )
 
 [node name="BoundaryUI" type="CanvasLayer" parent="Player"]
 
